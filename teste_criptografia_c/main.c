@@ -107,84 +107,7 @@ int main()
         }
         else if(escolha == 3)
         {
-
-            //login
-            char login[999];
-            char crip_login[999];
-            int tam_login;
-
-            printf("\nDigite o login a ser criptografado: ");
-            gets(login);
-
-            tam_login = strlen(login);
-            for(i=0; i<tam_login; i++)
-            {
-                crip_login[i] = login[i] + 1;
-            }
-            //senha
-            char senha[999];
-            char crip_senha[999];
-            int tam_senha;
-
-            printf("\nDigite a senha a ser criptografado: ");
-            gets(senha);
-
-            tam_senha = strlen(senha);
-            for(int j=0; j<tam_senha; j++)
-            {
-                crip_senha[j] = senha[j] + 1;
-            }
-
-            puts(crip_login);
-            puts(crip_senha);
-
-//TENTAR IMPRIMIR EM ARQUIVO TXT
-            FILE *fp;
-            fp = fopen("testeaps.txt","a");    /* Arquivo ASCII, para escrita */
-            if(!fp)
-            {
-                printf("Erro na abertura do arquivo");
-                exit(0);
-            }
-            //para contatenar (crip_login,crip_senha)
-            for(int r=0; (crip_login,crip_senha)[r]; r++) fputc((crip_login,crip_senha)[r], fp); /* Grava a string, caractere a caractere */
-            fclose(fp);
-
-
-
-        }
-        else if(escolha == 4)
-        {
-
-//login
-            char login[999];
-            char crip_login[999];
-            int tam_login;
-
-            printf("\nDigite o login a ser Descriptografado: ");
-            gets(crip_login);
-
-            tam_login = strlen(crip_login);
-            for(i=0; i<tam_login; i++)
-            {
-                login[i] = crip_login[i] - 1;
-            }
-            //senha
-            char senha[999];
-            char crip_senha[999];
-            int tam_senha;
-
-            printf("\nDigite a senha a ser Descriptografado: ");
-            gets(crip_senha);
-
-            tam_senha = strlen(crip_senha);
-            for(int j=0; j<tam_senha; j++)
-            {
-                senha[j] = crip_senha[j] - 1;
-            }
-
-            puts(login);
-            puts(senha);
+            puts(crip_msg);
 
             //TENTAR IMPRIMIR EM ARQUIVO TXT
             FILE *fp;
@@ -194,8 +117,7 @@ int main()
                 printf("Erro na abertura do arquivo");
                 exit(0);
             }
-            //para contatenar (login,senha)
-            for(int r=0; (login,senha)[r]; r++) fputc((login,senha)[r], fp); /* Grava a string, caractere a caractere */
+            for(int r=0; (crip_msg)[r]; r++) fputc((crip_msg)[r], fp); /* Grava a string, caractere a caractere */
             fclose(fp);
 
         }
